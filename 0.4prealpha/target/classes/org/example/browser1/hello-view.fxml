@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Tooltip?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.browser1.HelloController"
+            styleClass="root">
+
+    <!-- Custom Title Bar -->
+    <top>
+        <HBox fx:id="windowHeader" styleClass="window-header" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="8" right="12" bottom="8" left="12"/>
+            </padding>
+
+            <!-- Left side controls -->
+            <HBox alignment="CENTER_LEFT" spacing="4">
+                <Button styleClass="menu-button" onAction="#toggleSidebar">
+                    <graphic>
+                        <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                            <Image url="letter-z.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button styleClass="nav-button" text="⬅" onAction="#goBack"/>
+                <Button styleClass="nav-button" text="➡" onAction="#goForward"/>
+                <Button styleClass="nav-button" text="⟳" onAction="#refresh"/>
+            </HBox>
+
+            <!-- URL Field -->
+            <HBox HBox.hgrow="ALWAYS" alignment="CENTER">
+                <TextField fx:id="urlField" HBox.hgrow="ALWAYS" styleClass="url-field"
+                          promptText="Search or enter address" onAction="#loadUrl">
+                    <tooltip>
+                        <Tooltip text="Enter URL or search term"/>
+                    </tooltip>
+                </TextField>
+            </HBox>
+
+            <!-- Window Controls -->
+            <HBox styleClass="window-buttons">
+                <Button styleClass="window-button, minimize-button" text="─" onAction="#minimizeWindow"/>
+                <Button styleClass="window-button, maximize-button" text="□" onAction="#maximizeWindow"/>
+                <Button styleClass="window-button, close-button" text="×" onAction="#closeWindow"/>
+            </HBox>
+        </HBox>
+    </top>
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox fx:id="sidebarContent" styleClass="sidebar">
+            <!-- Folders Section -->
+            <VBox fx:id="foldersContainer" styleClass="folders-section"/>
+            
+            <!-- Pinned Tabs Section -->
+            <VBox styleClass="pinned-tabs-section">
+                <Label text="Pinned Tabs" styleClass="sidebar-header"/>
+                <HBox fx:id="pinnedTabsContainer" styleClass="pinned-tabs-container"/>
+            </VBox>
+            
+            <!-- Rest of your sidebar content -->
+            <VBox fx:id="tabListContainer" VBox.vgrow="ALWAYS"/>
+            <Button text="+ New Folder" styleClass="new-folder-button" onAction="#createNewFolder"/>
+            <Button text="+ New Tab" styleClass="new-tab-button" onAction="#createNewTab"/>
+        </VBox>
+    </left>
+
+    <!-- Center content with TabPane -->
+    <center>
+        <TabPane fx:id="mainTabPane" VBox.vgrow="ALWAYS" styleClass="browser-tabs">
+            <tabs>
+                <!-- No initial tab -->
+            </tabs>
+        </TabPane>
+    </center>
+
+    <!-- Right Sidebar -->
+    <right>
+        <VBox fx:id="rightSidebar" styleClass="right-sidebar" prefWidth="60">
+            <padding>
+                <Insets top="10" right="5" bottom="10" left="5"/>
+            </padding>
+            <VBox styleClass="sidebar-widget">
+                <Label text="♪" styleClass="widget-icon"/>
+            </VBox>
+        </VBox>
+    </right>
+</BorderPane>

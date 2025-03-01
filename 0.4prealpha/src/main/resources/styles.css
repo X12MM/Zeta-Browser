@@ -1,0 +1,774 @@
+/* Main layout */
+.root {
+    -fx-background-color: #ffffff;
+    -fx-font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.window-header{
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 12 16;
+    -fx-spacing: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 10, 0, 0, 2);
+    -fx-min-height: 60;
+    -fx-alignment: center-left;
+}
+
+/* Title bar styling */
+.title-bar {
+    -fx-background-color: #4339ca;
+    -fx-padding: 5 10;
+    -fx-background-radius: 0;
+}
+
+.url-field {
+    -fx-background-color: #f1f3f5;
+    -fx-background-radius: 24;
+    -fx-padding: 8 16;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #868e96;
+    -fx-text-fill: #495057;
+    -fx-min-height: 40;
+}
+
+.url-field:focused {
+    -fx-background-color: #e9ecef;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0, 0, 1);
+}
+
+/* Left sidebar styling */
+.left-sidebar {
+    -fx-background-color: #4339ca;
+    -fx-padding: 10;
+    -fx-spacing: 0;
+    -fx-background-radius: 0;
+}
+
+/* Folder and tab styles */
+.folder-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-padding: 8 12;
+    -fx-font-size: 14px;
+}
+
+.folder-header {
+    -fx-text-fill: #a8a4ff;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 0;
+}
+
+.tree-view, .list-view {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+.tree-cell, .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-padding: 8 12;
+}
+
+.tree-cell:selected, .list-cell:selected {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 8;
+}
+
+.tree-cell > .tree-disclosure-node > .arrow {
+    -fx-background-color: white;
+}
+
+.new-tab-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-border-width: 0;
+    -fx-font-size: 14px;
+}
+
+.new-tab-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar section headers */
+.sidebar-header {
+    -fx-text-fill: #a8a4ff;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/* Right sidebar styling */
+.right-sidebar {
+    -fx-background-color: #4339ca;
+    -fx-padding: 10 5;
+    -fx-background-radius: 0;
+}
+
+.sidebar-widget {
+    -fx-background-color: transparent;
+    -fx-padding: 10;
+    -fx-alignment: center;
+}
+
+.widget-icon {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+}
+
+/* Button styling */
+.button {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #dee2e6;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 5 10;
+
+}
+
+.button:hover {
+    -fx-background-color: #e9ecef;
+}
+
+/* Menu button styling */
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #495057;
+    -fx-min-width: 32;
+    -fx-min-height: 32;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+    -fx-font-size: 16px;
+}
+
+.menu-button:hover {
+    -fx-background-color: #f1f3f5;
+    -fx-background-radius: 16;
+}
+
+.menu-button .arrow {
+    -fx-background-color: #495057;
+}
+
+.menu-button .context-menu {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-border-color: #e9ecef;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 8, 0, 0, 2);
+    -fx-padding: 4;
+}
+
+.menu-item {
+    -fx-padding: 8 16;
+    -fx-background-radius: 4;
+}
+
+.menu-item:hover {
+    -fx-background-color: #f8f9fa;
+}
+
+.menu-item .label {
+    -fx-text-fill: #495057;
+}
+
+.separator {
+    -fx-background-color: #e9ecef;
+}
+
+/* Color picker styling */
+.color-picker {
+    -fx-background-color: white;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+    -fx-border-color: #e9ecef;
+}
+
+.color-picker:hover {
+    -fx-background-color: #f8f9fa;
+}
+
+/* Pinned tabs section */
+.pinned-section {
+    -fx-spacing: 5;
+    -fx-padding: 5;
+}
+
+.pinned-tab {
+    -fx-background-color: #e9ecef;
+    -fx-padding: 5 10;
+    -fx-font-size: 12px;
+    -fx-min-width: 50px;
+    -fx-max-width: 50px;
+    -fx-text-overrun: ellipsis;
+}
+
+.pinned-tab .tab-label {
+    -fx-rotate: 90;
+    -fx-padding: 0 0 0 5;
+}
+
+.pinned-tab .tab-close-button {
+    -fx-padding: 0 0 0 5;
+}
+
+.pinned-tab:selected {
+    -fx-background-color: #ffffff;
+}
+
+/* Hover effects */
+.folder-item:hover, 
+.tree-cell:selected, 
+.list-cell:selected,
+.pinned-tab:hover,
+.new-tab-button:hover,
+.sidebar-widget:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 8;
+}
+
+.sidebar-button {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-padding: 8 12;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-widget:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 8;
+}
+
+/* Add these new styles */
+.sidebar-separator {
+    -fx-padding: 5 0;
+    -fx-opacity: 0.2;
+    -fx-background-color: transparent;
+    -fx-border-width: 0.5;
+    -fx-border-color: white;
+}
+
+.new-tab-row {
+    -fx-padding: 8 12;
+    -fx-background-color: transparent;
+}
+
+.new-tab-row:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 8;
+}
+
+.new-tab-plus {
+    -fx-text-fill: white;
+    -fx-font-size: 18;
+}
+
+.new-tab-label {
+    -fx-text-fill: white;
+    -fx-font-size: 14;
+}
+
+/* Window Header Styles */
+.window-header {
+    -fx-background-color: #f8f9fa;
+    -fx-spacing: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);
+    -fx-padding: 5 10;
+    -fx-alignment: center-left;
+}
+
+.window-buttons {
+    -fx-spacing: 4;
+}
+
+.window-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #495057;
+    -fx-min-width: 32;
+    -fx-min-height: 32;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+
+.window-button:hover {
+    -fx-background-color: #f1f3f5;
+    -fx-background-radius: 16;
+}
+
+.close-button:hover {
+    -fx-background-color: #ff6b6b;
+    -fx-text-fill: white;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #495057;
+    -fx-min-width: 32;
+    -fx-min-height: 32;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+
+.nav-button:hover {
+    -fx-background-color: #f1f3f5;
+    -fx-background-radius: 16;
+}
+
+.web-view {
+    -fx-background-color: white;
+}
+
+/* Dialog styling */
+.dialog-pane {
+    -fx-background-color: white;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #f8f9fa;
+}
+
+.dialog-pane .button {
+    -fx-background-color: #f1f3f5;
+    -fx-text-fill: #495057;
+    -fx-background-radius: 4;
+    -fx-padding: 8 16;
+}
+
+.dialog-pane .button:hover {
+    -fx-background-color: #e9ecef;
+}
+
+/* Add to your existing CSS */
+
+.sidebar {
+    -fx-background-color: #4339ca;
+    -fx-min-width: 300;
+    -fx-pref-width: 300;
+    -fx-max-width: 300;
+    -fx-padding: 20;
+    -fx-spacing: 24;
+}
+
+.shortcut-grid {
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+    -fx-padding: 0 0 10 0;
+}
+
+.shortcut-button {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 16;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-min-width: 54;
+    -fx-min-height: 54;
+    -fx-cursor: hand;
+    -fx-padding: 8;
+    -fx-alignment: center;
+}
+
+.shortcut-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 8, 0, 0, 2);
+}
+
+.folder-section {
+    -fx-spacing: 12;
+}
+
+.folder-label {
+    -fx-text-fill: rgba(255, 255, 255, 0.9);
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 4 0;
+}
+
+.folder-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 16;
+    -fx-cursor: hand;
+    -fx-background-radius: 8;
+}
+
+.folder-item:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+.new-tab-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: rgba(255, 255, 255, 0.9);
+    -fx-font-size: 14px;
+    -fx-padding: 12;
+    -fx-cursor: hand;
+}
+
+.new-tab-button:hover {
+    -fx-text-fill: white;
+}
+
+.bottom-controls {
+    -fx-background-color: rgba(0, 0, 0, 0.2);
+    -fx-padding: 12;
+    -fx-spacing: 12;
+    -fx-background-radius: 12;
+}
+
+.bottom-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-min-width: 36;
+    -fx-min-height: 36;
+    -fx-background-radius: 18;
+    -fx-cursor: hand;
+    -fx-font-size: 16px;
+}
+
+.bottom-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Scrollbar */
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 12;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-background-radius: 6;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* WebView Styling */
+.web-view {
+    -fx-min-width: 800;
+    -fx-min-height: 600;
+}
+
+/* Tab styling */
+.tab-pane {
+    -fx-tab-min-width: 100px;
+    -fx-tab-max-width: 200px;
+    -fx-tab-min-height: 30px;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #e9ecef;
+    -fx-background-radius: 4 4 0 0;
+    -fx-border-width: 1 1 0 1;
+    -fx-border-color: #dee2e6;
+    -fx-padding: 5 15;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: white;
+    -fx-border-color: #dee2e6;
+}
+
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #495057;
+    -fx-font-size: 14px;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #212529;
+}
+
+.tab-pane .tab-close-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 8;
+}
+
+.tab-pane .tab-close-button:hover {
+    -fx-background-color: #f1f3f5;
+    -fx-background-radius: 8;
+}
+
+.url-field {
+    -fx-background-radius: 20;
+    -fx-padding: 8 20;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 4, 0, 0, 1);
+}
+
+.url-field:valid {
+    -fx-text-fill: #4339ca;
+}
+
+.url-field:invalid {
+    -fx-text-fill: #495057;
+}
+
+/* Folder styling */
+.folder-content {
+    -fx-spacing: 8;
+    -fx-padding: 12;
+}
+
+.folder-content .button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #495057;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 8 12;
+    -fx-border-radius: 4;
+}
+
+.folder-content .button:hover {
+    -fx-background-color: #f1f3f5;
+}
+
+/* Context menu styling */
+.context-menu {
+    -fx-background-color: white;
+    -fx-background-radius: 4;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);
+    -fx-padding: 4;
+    -fx-transition: opacity 0.1s ease;
+}
+
+.menu-item {
+    -fx-padding: 8 16;
+    -fx-background-radius: 4;
+    -fx-transition: background-color 0.1s ease;
+}
+
+.menu-item:hover {
+    -fx-background-color: #f1f3f5;
+}
+
+/* Folder Styles */
+.folders-section {
+    -fx-spacing: 10;
+}
+
+.folder-box {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 4;
+    -fx-padding: 5;
+    -fx-spacing: 5;
+}
+
+.folder-header {
+    -fx-padding: 5;
+    -fx-spacing: 5;
+    -fx-alignment: center-left;
+}
+
+.folder-label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.folder-toggle {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-padding: 0 5;
+    -fx-cursor: hand;
+}
+
+.folder-content {
+    -fx-padding: 5 0 5 20;
+    -fx-spacing: 5;
+}
+
+.folder-tab-entry {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+}
+
+.open-tab-button, .remove-tab-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-padding: 2 8;
+    -fx-cursor: hand;
+}
+
+.open-tab-button:hover, .remove-tab-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+}
+
+.new-folder-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-border-color: white;
+    -fx-border-radius: 3;
+    -fx-cursor: hand;
+}
+
+.new-folder-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Pinned Tabs Section */
+.pinned-tabs-section {
+    -fx-spacing: 10;
+    -fx-padding: 10;
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 8;
+}
+
+.pinned-tabs-container {
+    -fx-spacing: 5;
+    -fx-alignment: center-left;
+}
+
+.pinned-tab-button {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 5 10;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+    -fx-min-width: 80px;
+    -fx-max-width: 80px;
+    -fx-text-overrun: ellipsis;
+}
+
+.pinned-tab-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Logo styling */
+.window-header ImageView {
+    -fx-padding: 5;
+    -fx-margin: 0 10 0 5;  /* top right bottom left */
+}
+
+/* Add these new styles */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #f8f9fa;
+}
+
+/* Add these new styles */
+.pinned-tabs-section {
+    -fx-spacing: 10;
+    -fx-padding: 10;
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 8;
+}
+
+.pinned-tabs-container {
+    -fx-spacing: 5;
+    -fx-alignment: center-left;
+}
+
+.pinned-tab-button {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 5 10;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+    -fx-min-width: 80px;
+    -fx-max-width: 80px;
+    -fx-text-overrun: ellipsis;
+}
+
+.pinned-tab-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Add these new styles for smoother transitions */
+.tab-container {
+    -fx-background-color: transparent;
+    -fx-background-radius: 4 4 0 0;
+    -fx-transition: background-color 0.2s ease;
+}
+
+.tab-container:hover {
+    -fx-background-color: #e9ecef;
+}
+
+.tab-container:selected {
+    -fx-background-color: white;
+}
+
+.context-menu {
+    -fx-background-color: white;
+    -fx-background-radius: 4;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);
+    -fx-padding: 4;
+    -fx-transition: opacity 0.1s ease;
+}
+
+.menu-item {
+    -fx-padding: 8 16;
+    -fx-background-radius: 4;
+    -fx-transition: background-color 0.1s ease;
+}
+
+.menu-item:hover {
+    -fx-background-color: #f1f3f5;
+}
+
+/* Tab hover effects */
+.tab-container {
+    -fx-background-color: transparent;
+    -fx-background-radius: 4 4 0 0;
+    -fx-transition: background-color 0.2s ease;
+}
+
+.tab-container:hover {
+    -fx-background-color: #e9ecef;
+}
+
+.tab-container:selected {
+    -fx-background-color: white;
+}
+
+/* Add empty state styling */
+.tab-pane:empty {
+    -fx-background-color: #f8f9fa;
+    -fx-alignment: center;
+}
+
+.tab-pane:empty::before {
+    -fx-content: "No tabs open";
+    -fx-font-size: 14px;
+    -fx-text-fill: #868e96;
+}
+
+/* Sidebar Tab Styles */
+.sidebar-tab-entry {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-padding: 8;
+    -fx-spacing: 5;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+    -fx-transition: all 0.2s ease;
+    -fx-margin: 2 0;
+}
+
+.sidebar-tab-entry:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-tab-entry.selected {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 1);
+    -fx-translate-x: 5px;
+    -fx-border-color: rgba(255, 255, 255, 0.5);
+    -fx-border-width: 0 0 0 2px;
+}
+
+.tab-list {
+    -fx-spacing: 5;
+    -fx-padding: 5;
+    -fx-alignment: top-left;
+}
+
+/* Hide tab header area */
+.tab-header-area {
+    -fx-padding: 0;
+    -fx-pref-height: 0;
+    -fx-min-height: 0;
+    -fx-max-height: 0;
+}
